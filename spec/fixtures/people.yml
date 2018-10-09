@@ -1,0 +1,9 @@
+person_one:
+  id: 1
+  name: Andres
+  document_number: 123456789
+
+person_two:
+  id: 2
+  name: Felipe
+  document_number: 987654321

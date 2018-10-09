@@ -1,0 +1,17 @@
+vehicle_one:
+  plate: AAA123
+  branch: renault
+  category: SUV
+  person_id: 1
+
+vehicle_two:
+  plate: BBB123
+  branch: audi
+  category: sedan
+  person: 1
+
+vehicle_three:
+  plate: CCC123
+  branch: audi
+  category: SUV
+  person: 2
