@@ -10,9 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2018_10_09_064740) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "people", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "document_number", null: false
+    t.string "document_file"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["document_number"], name: "index_people_on_document_number", unique: true
+    t.index ["name"], name: "index_people_on_name"
+  end
+
+  create_table "vehicles", force: :cascade do |t|
+    t.string "plate", limit: 6, null: false
+    t.string "branch", null: false
+    t.string "category", null: false
+    t.bigint "person_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["person_id"], name: "index_vehicles_on_person_id"
+    t.index ["plate"], name: "index_vehicles_on_plate", unique: true
+  end
+
+  add_foreign_key "vehicles", "people"
 end
